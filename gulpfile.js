@@ -15,6 +15,14 @@ gulp.task('lint', function(){
 
 
 
+gulp.task('annotate', function(){
+  return gulp.src('./client/scripts/**/*.js')
+  .pipe($.ngAnnotate())
+  .pipe(gulp.dest('./client/annotate'));
+});
+
+
+
 gulp.task('browserify', function(){
   return browserify('./client/scripts/app.js')
   .bundle()
