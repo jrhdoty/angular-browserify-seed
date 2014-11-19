@@ -5,7 +5,7 @@ var angular = require('angular');
 
 
 //main app module
-var app = require('angular').module('demoApp', ['app.home', 'app.about'])
+var app = require('angular').module('demoApp', ['app.home', 'app.about']);
 
 
 //require submodules
