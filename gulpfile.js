@@ -15,6 +15,14 @@ gulp.task('lint', function(){
 
 
 
+gulp.task('sass', function(){
+  gulp.src('./client/sass/**/*.scss')
+  .pipe($.sass())
+  .pipe(gulp.dest('./client/dist'));
+});
+
+
+
 gulp.task('annotate', function(){
   return gulp.src('./client/scripts/**/*.js')
   .pipe($.ngAnnotate())
@@ -48,6 +56,6 @@ gulp.task('browserify-min', ['annotate'], function(){
 
 
 gulp.task('clean', function(){
-  return gulp.src('./client/dist', {read:false})
+  return gulp.src(['./client/dist', './client/annotate'], {read:false})
   .pipe($.clean());
 });
